@@ -8,6 +8,8 @@ data "aws_instance" "instance_info" {
     name   = "instance-state-name"
     values = ["running"]
   } 
+
+  depends_on = [ aws_instance.terra_ec2 ]
 }
 
 resource "aws_instance" "terra_ec2" {
